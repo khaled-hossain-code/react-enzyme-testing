@@ -10,3 +10,13 @@ it('should handle save comment action', () => {
   const new_state = CommentsReducer([],action);
   expect(new_state).toEqual(['New Comment']);
 })
+
+it('should not throw error for unknown actions', () => {
+  const action = {
+    type: 'unknown_action',
+    payload: 'unknown comment'
+  }
+
+  const new_state = CommentsReducer(['old_state'], action);
+  expect(new_state).toEqual(['old_state']);
+})

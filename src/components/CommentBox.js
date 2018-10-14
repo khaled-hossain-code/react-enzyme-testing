@@ -14,7 +14,7 @@ class CommentBox extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // TODO: trigger an action to save  comment in store
+    this.props.saveComment(this.state.comment);
     this.setState({
       comment: ''
     });

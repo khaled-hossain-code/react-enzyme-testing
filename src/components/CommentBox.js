@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { saveComment } from '../actions';
 
 class CommentBox extends Component {
   state = { comment: ''};
@@ -32,4 +35,4 @@ class CommentBox extends Component {
   }
 }
 
-export default CommentBox;
+export default connect(null, { saveComment })(CommentBox);
